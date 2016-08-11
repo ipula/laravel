@@ -74,14 +74,13 @@
     @if(!Auth::check())
         <a href="#">I forgot my password</a><br>
       {{HTML::link('register','Register a new membership',array('class'=>'text-center'))}}
-    @else
-      {{HTML::link('','LogOut',array('class'=>'text-center'))}}
+      @else
       @endif
   </div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-@yield('content')
+
 <!-- jQuery 2.2.3 -->
 <script src="css/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->

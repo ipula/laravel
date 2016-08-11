@@ -16,3 +16,4 @@ Route::post('register',array('before' => 'csrf' , 'uses' => 'EmployeeController@
 Route::post('home',array('as'=>'home','uses'=>'EmployeeController@get_login'));
 
 Route::get('dashboard',array('as'=>'dashboard','uses'=>'DashboardController@get_new'));
+Route::get('logout',array('as'=>'logout','uses'=>'EmployeeController@get_logout'));

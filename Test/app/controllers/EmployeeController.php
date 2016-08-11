@@ -15,7 +15,7 @@ class EmployeeController extends Controller
 
         if($validate->fails())
         {
-            return Redirect::to_route('register')->with_errors($validate)->with_input();
+            return Redirect::route('register')->with_errors($validate)->with_input();
         }
         else
         {
@@ -45,4 +45,18 @@ class EmployeeController extends Controller
             return Redirect::route('home')->with('message','UserName Password Incorrect!!!');
         }
     }
+
+    function get_logout()
+    {
+        if(Auth::check())
+        {
+            Auth::logout();
+            return Redirect::route('home')->with('message','Now you are LogOut!!!!');
+        }
+        else
+        {
+            return Redirect::route('dashboard');
+        }
+    }
+
 }
