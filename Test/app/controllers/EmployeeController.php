@@ -70,7 +70,7 @@ class EmployeeController extends Controller
         );
         $pwd=Input::has('password1');
 //        echo $pwd;
-        $validator = Validator::make(Input::all(),$rules);
+//        $validator = Validator::make(Input::all(),$rules);
 
 //        if ($validator->fails())
 //        {

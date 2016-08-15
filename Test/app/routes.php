@@ -30,3 +30,6 @@ Route::get('forgetpassword',array('as'=>'forgetpassword','uses'=>'ForgetpwdContr
 Route::get('resetpassword',array('as'=>'resetpassword','uses'=>'ResetpwdController@get_resetPwd'));
 
 Route::post('profile',array('as'=>'profile','uses'=>'EmployeeController@reset_pwd'));
+
+//Route::get('EmployeeDetails',array('as'=>'EmpDetails','uses'=>'TableController@get_table'));
+Route::get('EmployeeDetails',array('as'=>'EmpDetails','uses'=>'TableController@get_details'));
