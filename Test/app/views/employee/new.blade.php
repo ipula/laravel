@@ -50,7 +50,7 @@
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                {{Form::text('email',null,array('class'=>'form-control','placeholder'=>'Email'))}}
+                {{Form::email('email',null,array('class'=>'form-control','placeholder'=>'Email'))}}
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -85,9 +85,9 @@
                 Facebook</a>
             <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign up using
                 Google+</a>
+
         </div>
 
-        <a href="login.html" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
 </div>

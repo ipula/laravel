@@ -15,15 +15,16 @@ class EmployeeController extends Controller
 
         if($validate->fails())
         {
-            return Redirect::route('register')->with_errors($validate)->with_input();
+            return Redirect::route('register')->withErrors($validate)->withInput();
         }
         else
         {
             Employee::create(array(
+                'email'=>Input::get('email'),
                 'employeename' => Input::get('name'),
                 'password' =>Hash::make(Input::get('password'))
             ));
-            return Redirect::route('home')->with('message','Thanks for Rgitering');
+            return Redirect::route('home')->with('message','Thanks for Registering');
 
         }
     }
@@ -31,7 +32,7 @@ class EmployeeController extends Controller
     function get_login()
     {
         $employee=array(
-            'employeename'=>Input::get('employeename'),
+            'email'=>Input::get('email'),
              'password'=>Input::get('password')
         );
 
@@ -59,4 +60,35 @@ class EmployeeController extends Controller
         }
     }
 
+    public function reset_pwd()
+    {
+        $user = Auth::user();
+        $rules = array(
+            'password1' => 'required',
+            'newpassword' => 'required',
+            'retypepassword'=>'required|same:newpassword'
+        );
+        $pwd=Input::has('password1');
+//        echo $pwd;
+        $validator = Validator::make(Input::all(),$rules);
+
+//        if ($validator->fails())
+//        {
+//            return Redirect::to('profile')->withErrors($validator);
+//        }
+//        else
+//        {
+            if (!Hash::check(Input::get('password1'), $user->password))
+            {
+                echo $user->password;
+                return Redirect::to('profile')->withErrors('Your old password does not match');
+            }
+            else
+            {
+                $user->password = Hash::make(Input::get('newpassword'));
+                $user->save();
+                return Redirect::to('dashboard')->withMessage("Password have been changed");
+            }
+        }
+//    }
 }

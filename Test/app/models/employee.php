@@ -10,11 +10,12 @@ class Employee extends BaseModel implements UserInterface, RemindableInterface
 
     protected $table="employee";
 
-    protected $fillable = array('employeename', 'password');
+    protected $fillable = array('email','name', 'password','repassword');
     public static $rules=array(
+        'email'=>'required',
         'name'=>'required',
         'password'=>'required',
-        'repassword'=>'required'
+        'repassword'=>'required|same:password'
 
     );
     

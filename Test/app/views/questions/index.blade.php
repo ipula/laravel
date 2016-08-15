@@ -24,6 +24,8 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 </head>
+
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
@@ -36,7 +38,7 @@
     {{Form::open(array('home','POST'))}}
     {{Form::token()}}
       <div class="form-group has-feedback">
-        {{Form::text('employeename',null,array('class'=>'form-control','placeholder'=>'Full name'))}}
+        {{Form::email('email',null,array('class'=>'form-control','placeholder'=>'Email'))}}
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -70,11 +72,13 @@
       <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
         Google+</a>
     </div>
+    <a href="/forgetpassword">I forgot my password</a><br>
+    {{--{{HTML::link('register','Register a new membership',array('class'=>'text-center'))}}--}}
     <!-- /.social-auth-links -->
     @if(!Auth::check())
-        <a href="#">I forgot my password</a><br>
       {{HTML::link('register','Register a new membership',array('class'=>'text-center'))}}
       @else
+      {{HTML::link('register','Register a new membership',array('class'=>'text-center'))}}
       @endif
   </div>
   <!-- /.login-box-body -->

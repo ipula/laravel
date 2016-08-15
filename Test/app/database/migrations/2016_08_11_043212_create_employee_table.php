@@ -15,9 +15,11 @@ class CreateEmployeeTable extends Migration {
         Schema::create('employee',function($table)
         {
             $table->increments('id');
+            $table->string('email');
             $table->string('employeename');
             $table->string('password');
             $table->timestamps();
+
 
         });
 
