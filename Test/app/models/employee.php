@@ -18,5 +18,6 @@ class Employee extends BaseModel implements UserInterface, RemindableInterface
         'repassword'=>'required|same:password'
 
     );
-    
+
+
 }

@@ -33,3 +33,7 @@ Route::post('profile',array('as'=>'profile','uses'=>'EmployeeController@reset_pw
 
 //Route::get('EmployeeDetails',array('as'=>'EmpDetails','uses'=>'TableController@get_table'));
 Route::get('EmployeeDetails',array('as'=>'EmpDetails','uses'=>'TableController@get_details'));
+Route::get('edit_emp/{id}',array('as'=>'edit_emp','uses'=>'TableController@edit_employee'));
+
+
+Route::post('edit_emp/{id}',array('before' => 'csrf','uses'=>'TableController@update_detail'));

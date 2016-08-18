@@ -7,18 +7,18 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
-    <link rel="stylesheet" href="css/bootstrap/css2/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap/css2/bootstrap.min.css') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="css/plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/plugins/datatables/dataTables.bootstrap.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="css/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/dist/css/AdminLTE.min.css') }}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="css/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/dist/css/skins/_all-skins.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -521,37 +521,35 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <table id="example2" class="table table-bordered table-hover">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Email</th>
-                                    <th>Employee Name</th>
-                                    <th>Created_at</th>
-                                    <th>Updateed_at</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($employee as $key=>$customer)
+                                {{Form::open(array('edit_emp/{id}','POST'))}}
+                                {{Form::token()}}
+                                    <thead>
                                     <tr>
-                                        <td>{{$customer->id}}</td>
-                                        <td>{{$customer->email}}</td>
-                                        <td>{{$customer->employeename}}</td>
-                                        <td>{{$customer->created_at}}</td>
-                                        <td>{{$customer->updated_at}}</td>
-                                        <td>{{HTML::linkRoute('edit_emp','Edit',$customer->id)}}</td>
-                                </tr>
-                                    @endforeach
 
-                                <tr>
-                                    <td>Other browsers</td>
-                                    <td>All others</td>
-                                    <td>-</td>
-                                    <td>-</td>
-                                    <td>U</td>
-                                </tr>
-                                </tbody>
+                                        <th>Email</th>
+                                        <th>Employee Name</th>
+
+                                    </tr>
+                                    <tbody>
+                                    <tr>
+
+                                        <td>{{Form::email('email',$employee->email)}}</td>
+                                        <td>{{Form::text('empname',$employee->employeename)}}</td>
+                                        {{Form::hidden('Emp_id',$employee->id)}}
+
+                                    </tr>
+                                    <tr>
+                                        <td>Other browsers</td>
+                                        <td>All others</td>
+
+                                    </tr>
+                                    </tbody>
+                                    <div class="col-sm-7">{{Form::submit('Update')}}</div>
+                                {{Form::close()}}
                             </table>
-                            <div class="col-sm-7">{{$employee->links()}}</div>
+
+
+
                         </div>
 
                         <!-- /.box-body -->
@@ -775,20 +773,20 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="css/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="{{ URL::asset('css/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="css/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{ URL::asset('css/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- DataTables -->
-<script src="css/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="css/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="{{ URL::asset('css/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ URL::asset('css/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 <!-- SlimScroll -->
-<script src="css/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="{{ URL::asset('css/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
-<script src="css/plugins/fastclick/fastclick.js"></script>
+<script src="{{ URL::asset('css/plugins/fastclick/fastclick.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="css/dist/js/app.min.js"></script>
+<script src="{{ URL::asset('css/dist/js/app.min.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="css/dist/js/demo.js"></script>
+<script src="{{ URL::asset('css/dist/js/demo.js') }}"></script>
 <!-- page script -->
 
 </body>

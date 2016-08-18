@@ -21,7 +21,7 @@ class EmployeeController extends Controller
         {
             Employee::create(array(
                 'email'=>Input::get('email'),
-                'employeename' => Input::get('name'),
+                'employeename'=>Input::get('name'),
                 'password' =>Hash::make(Input::get('password'))
             ));
             return Redirect::route('home')->with('message','Thanks for Registering');
