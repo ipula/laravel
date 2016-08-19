@@ -18,6 +18,7 @@ class CreateEmployeeTable extends Migration {
             $table->string('email');
             $table->string('employeename');
             $table->string('password');
+            $table->integer('work_count');
             $table->timestamps();
 
 

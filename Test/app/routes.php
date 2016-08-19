@@ -37,3 +37,5 @@ Route::get('edit_emp/{id}',array('as'=>'edit_emp','uses'=>'TableController@edit_
 
 
 Route::post('edit_emp/{id}',array('before' => 'csrf','uses'=>'TableController@update_detail'));
+Route::get('chartdata',array('as'=>'chartdata','uses'=>'BarChartController@get_chartdata'));
+Route::get('chart',array('as'=>'chart','uses'=>'BarChartController@get_chart'));

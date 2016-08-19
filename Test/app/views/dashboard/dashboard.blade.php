@@ -374,7 +374,7 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="/EmployeeDetails"><i class="fa fa-circle-o"></i> Employee Details</a></li>
-                        <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                        <li><a href="/chart"><i class="fa fa-circle-o"></i> Bar Chart</a></li>
                         <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
                         <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
                     </ul>
