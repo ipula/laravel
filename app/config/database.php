@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'mytest',
-			'username'  => 'root',
-			'password'  => 'mysql',
+            'database'  => $_ENV['DATABASE_NAME'],
+            'username'  => $_ENV['DATABASE_USER'],
+            'password'  => $_ENV['DATABASE_PASSWORD'],
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -114,8 +114,8 @@ return array(
 		'cluster' => false,
 
 		'default' => array(
-			'host'     => '127.0.0.1',
-			'port'     => 6379,
+			'host'     => $_ENV['HOST'],
+			'port'     => $_ENV['PORT'],
 			'database' => 0,
 		),
 
