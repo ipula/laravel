@@ -42,7 +42,8 @@
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        {{Form::password('password',null,array('class'=>'form-control','placeholder'=>'Password')) }}
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        {{--{{Form::password('password',['placeholder' => 'Paswoord','size'=>'30*10'],array('class'=>'form-control','placeholder'=>'Password')) }}--}}
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

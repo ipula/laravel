@@ -46,7 +46,8 @@
         {{--{!! Form::hidden('_token',null,array('required','class'=>'form-control','placeholder'=>'Full name')) !!}--}}
         {{--<input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
             <div class="form-group has-feedback">
-                {{Form::text('name',null,array('class'=>'form-control','placeholder'=>'Full name'))}}
+                <input type="text" name="name" class="form-control" placeholder="UserName">
+                {{--{{Form::text('name',null,array('class'=>'form-control','placeholder'=>'Full name'))}}--}}
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -54,11 +55,13 @@
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                {{Form::password('password',null,array('class'=>'form-control','placeholder'=>'Password')) }}
+                <input type="password" name="password" class="form-control" placeholder="Password">
+                {{--{{Form::password('password',null,array('class'=>'form-control','placeholder'=>'Password')) }}--}}
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                {{Form::password('repassword',null,array('class'=>'form-control','placeholder'=>'Retype Password')) }}
+                <input type="password" name="repassword" class="form-control" placeholder="Password">
+                {{--{{Form::password('repassword',null,array('class'=>'form-control','placeholder'=>'Retype Password')) }}--}}
                 <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
             </div>
             <div class="row">
