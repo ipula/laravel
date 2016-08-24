@@ -19,7 +19,7 @@ Route::filter('auth', function() {
 Route::get('/',array('as'=>'home','uses'=>'QuestionController@get_index'));
 Route::get('register',array('as'=>'register','uses'=>'EmployeeController@get_new'));
 Route::post('register',array('before' => 'csrf' , 'uses' => 'EmployeeController@post_create'));
-Route::post('home',array('as'=>'home','uses'=>'EmployeeController@get_login'));
+Route::post('/',array('as'=>'home','uses'=>'EmployeeController@get_login'));
 
 Route::get('dashboard',array('as'=>'dashboard','uses'=>'DashboardController@get_new'));
 Route::get('logout',array('as'=>'logout','uses'=>'EmployeeController@get_logout'));
