@@ -16,7 +16,7 @@ Route::filter('auth', function() {
     }
 });
 
-Route::get('home',array('as'=>'home','uses'=>'QuestionController@get_index'));
+Route::get('/',array('as'=>'home','uses'=>'QuestionController@get_index'));
 Route::get('register',array('as'=>'register','uses'=>'EmployeeController@get_new'));
 Route::post('register',array('before' => 'csrf' , 'uses' => 'EmployeeController@post_create'));
 Route::post('home',array('as'=>'home','uses'=>'EmployeeController@get_login'));
